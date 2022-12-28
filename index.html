@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+<title>Teacher Stuff</title>
+<link rel="icon" type="image/x-icon" href="gallery/teachlogo31.png">
+<link rel="stylesheet"  type="text/css" href="style.css">
+<link href='https://fonts.googleapis.com/css?family=Akaya Telivigala' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap' rel='stylesheet'>
+<style>
+body,html{
+    min-height:100vh;
+    background:black;
+   }
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Ubuntu',sans-serif;
+   }
+    
+
+
+
+.navigation{
+          position:fixed;
+          inset:20px;
+          background:#150AF8;
+          width:80px;
+          border-left:10px solid #7D11EC;
+          border-radius:20px;
+          overflow:hidden;
+          transition:0.5s;
+         }
+
+.navigation.active{
+              width:200px;
+              border-radius:20px;
+             }
+
+
+.navigation ul{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+           }
+
+.navigation ul li {
+               position:relative;
+               list-style:none;
+               width:100%;
+               border-top-left-radius:30px;
+               border-bottom-left-radius:30px;
+              }
+
+.navigation ul li:hover{
+                background:black;
+                }
+.navigation ul li a.active{
+                      background:black;
+                      border-top-left-radius:30px;
+                      border-bottom-left-radius:30px;
+                    }
+
+
+.navigation ul li:nth-child(1){
+                     top:20px;
+                     margin-bottom:40px;
+                     background:none;
+                   }
+
+.navigation ul li a{
+                position:relative;
+                display:block;
+                width:100%;
+                display:flex;
+                text-decoration:none;
+                color:#28282B;
+               }
+
+.navigation ul li:hover:not(:first-child) a,
+.navigation ul li a.active{
+             color:#150AF8;
+             }
+.icon{
+      position:relative;
+      display:block;
+      min-width:60px;
+      height:50px;
+      line-height:60px;
+      text-align:center;
+     }
+.icon ion-icon{
+          font-size:1.75em;
+          }
+
+.title{
+        position:relative;
+        display:block;
+        padding:0 10px;
+        height:50px;
+        line-height:50px;
+        text-align:start;
+        white-space:nowrap;
+      }
+.navigation .closebtn {
+                 position: absolute;
+                 bottom: 0;
+                 right: 25px;
+                 font-size: 36px;
+                 text-align:center;
+             }
+.navigation.active.closebtn{
+position: absolute;
+                 bottom: 0;
+                 right: 25px;
+                 font-size: 36px;
+                 margin-left: 40px;}
+.navigation a {
+              text-decoration:none;
+              color:black;}
+              .navigation li {
+               list-style:none;
+               }
+ /*curve outside*/
+.navigation ul li:not(:first-child):hover a::before,
+.navigation ul li a.active::before{
+               content:'';
+               position:absolute;
+               right:0;
+               top:-40px;
+               width:40px;
+               height:40px;
+               background:transparent;
+               border-radius:50%;
+               box-shadow:30px 30px 0 10px black;
+               pointer-events:none;
+             }
+
+.navigation ul li:not(:first-child):hover a::after,
+.navigation ul li a.active::after{
+               content:'';
+               position:absolute;
+               right:0;
+               bottom:-40px;
+               width:40px;
+               height:40px;
+               background:transparent;
+               border-radius:50%;
+               box-shadow:30px -30px 0 10px black;
+               pointer-events:none;
+               }
+
+#main {
+ margin-left:50px;
+  transition: margin-left .5s;
+  padding: 20px;
+color:#fff;
+}
+
+@media screen and (max-height: 450px) {
+  .navigation {padding-top: 15px;}
+  .navigation a {font-size: 18px;}
+
+}
+@media(max-width:992px){
+.navigation{
+left:0;}
+.navigation.active{
+left:0;
+width:200px;}
+.main{
+width:100%;
+left:0;
+}
+.main.active{
+width:calc(100%-200px);
+left:200px;
+}
+
+}
+
+/*text scroller*/
+
+:root {
+  --font-size: 70px;
+  --line-height: calc(var(--font-size) + 0px); /*adjust line spacing */
+}
+.scroll-wrapper {
+          position:absolute;
+          left:270px;
+          width: 900px;
+          max-width: 100%;
+          height: 500px;
+          margin: auto;
+          display: flex;
+          justify-content: center;
+          background:url("newyear.jpg");
+          background-size:100% 100%;
+
+  
+}
+ .scroll-wrapper-img{
+             position:relative;
+             z-index:-1;
+           }
+
+ .scroller{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width:80%;
+      }
+.scroller h2{
+           padding:0;
+           color:#fff;
+           font-size:3rem;
+           text-shadow:0 2px 0 rgba(0,0,0,0.5);
+           text-align:left;
+           font-family:alfa slab one;
+           letter-spacing:3px;
+          }
+
+.scroller pre {
+         width:40%;
+         color:#fff;
+         font-size:1.5rem;
+         font-family:monoserrat;
+         line-height:1.9;
+       }
+
+
+
+
+.glow {
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #dcdcdc, 0 0 40px #dcdcdc, 0 0 50px #dcdcdc, 0 0 60px #dcdcdc, 0 0 70px #dcdcdc;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #dcdcdc, 0 0 40px #dcdcdc, 0 0 50px #dcdcdc, 0 0 60px #dcdcdc, 0 0 70px #dcdcdc, 0 0 80px #dcdcdc;
+  }
+}
+
+
+</style>
+</head>
+<body>
+<div id="mySidenav" class="navigation">
+<li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+   <ul>
+      <li>
+         <a href="index.html">
+            <span class="icon"><img src="gallery/teachlogo3.png" width="50px" height="50px"></span>
+            <span class="title">Teacher Stuff</span>
+         </a>
+      </li>
+       <li>
+           <a href="all sites.html">
+              <span class="icon"><ion-icon name="logo-web-component"></ion-icon></span>
+             <span class="title">ALL Sites</span>
+           </a>
+       </li>
+        <li>
+         <a href="app links.html">
+            <span class="icon"><ion-icon name="calculator-outline"></ion-icon></span>
+            <span class="title">App Links</span>
+         </a>
+      </li>
+      <li>
+         <a href="teacher needs.html">
+            <span class="icon"><ion-icon name="print-outline"></ion-icon></span>
+            <span class="title">Teacher Needs</span>
+         </a>
+      </li>
+      <li>
+         <a href="monthly reports.html">
+            <span class="icon"><ion-icon name="calendar-number-outline"></ion-icon></span>
+            <span class="title">Monthly Reports</span>
+         </a>
+      </li>
+       <li>
+         <a href="notice board.html">
+            <span class="icon"><ion-icon name="reader-outline"></ion-icon></span>
+            <span class="title">Notice Board</span>
+         </a>
+      </li>
+       <li>
+         <a href="wall posters.html">
+            <span class="icon"><ion-icon name="image-outline"></ion-icon></span>
+            <span class="title">Wall Posters</span>
+         </a>
+      </li>
+      <li>
+         <a href="teacher stuff.html">
+            <span class="icon"><ion-icon name="easel-outline"></ion-icon></span>
+            <span class="title">Teacher Stuff</span>
+         </a>
+      </li>
+       <li>
+         <a href="student stuff.html">
+            <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
+            <span class="title">Student Stuff</span>
+         </a>
+      </li>
+  </ul>
+
+</div>
+  <div id="main">
+
+
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+<div class="scroll-wrapper">
+   
+           <div class="scroller">
+             <h2 class="glow" >Happy New Year <br> &emsp;&emsp;2023</h2>
+             <pre >    -New year
+         -New Feels 
+              -Same Dreams
+                     -Fresh Starts.
+                    </pre>
+              
+        </div>
+
+  </div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+</body>
+</html>
